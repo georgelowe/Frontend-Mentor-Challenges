@@ -10,73 +10,101 @@
   --terminal-response: #376e6f;
 }
 
-html * {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background-color: var(--very-light-gray);
-}
-
-h1 {
-  font-family: "Big Shoulders Display", sans-serif;
-  color: var(--very-light-gray);
-  background-color: transparent;
-}
-
-img {
-  display: none;
-}
-
-p {
+  font-size: 15px;
   font-family: "Lexend Deca", sans-serif;
-  font-size: 15px !important;
-  background-color: transparent;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+h3 {
+  color: var(--very-light-gray);
+  text-transform: uppercase;
+  font-family: "Lexend Deca";
+  font-weight: 700;
+  font-size: 30px;
+}
+p {
   color: var(--transparent-white);
 }
 
 button {
-  background-color: var(--very-light-gray);
-  border: none;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  border-radius: 100px;
+  background-color: var(--very-light-gray) !important;
+  border: 2px solid var(--very-light-gray);
+  margin-top: 4rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-radius: 30px;
   cursor: pointer;
 }
 
-button:hover {
-  border: var(--very-light-gray) 1px solid;
-  background-color: inherit;
-}
-
+button:hover,
 button:focus {
-  background-color: var(--very-light-gray);
+  background-color: transparent !important;
+  color: var(--very-light-gray);
+  border: 2px solid var(--very-light-gray);
   outline: none;
 }
 
-.card-container {
+.container {
   display: flex;
-  width: 50%;
-  margin: auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
 }
 
 .card {
-  padding: 2rem;
+  padding: 3rem 2rem 2rem 2rem;
 }
 
-#card-1 {
+.orange {
   background-color: var(--bright-orange);
-}
-#card-2 {
-  background-color: var(--dark-cyan);
-}
-#card-3 {
-  background-color: var(--very-dark-cyan);
-}
-
-#button-1 {
   color: var(--bright-orange);
 }
-#button-2 {
+
+.orange.card {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.dark-cyan {
+  background-color: var(--dark-cyan);
   color: var(--dark-cyan);
 }
-#button-3 {
+
+.very-dark-cyan {
+  background-color: var(--very-dark-cyan);
   color: var(--very-dark-cyan);
+}
+
+.very-dark-cyan.card {
+  border-radius: 0px 10px 10px 0px;
+}
+
+@media screen and (max-width: 938px) {
+  .container {
+    flex-direction: column;
+    margin: 1rem;
+    width: 315px;
+  }
+
+  .orange.card {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .very-dark-cyan.card {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
 }
